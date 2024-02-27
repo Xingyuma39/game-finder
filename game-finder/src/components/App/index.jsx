@@ -9,6 +9,23 @@ import { useState, useEffect } from 'react'
 
 
 export default function App() {
+  const [games, setGames] = useState([])
+  const [detailsData, setDetailsData] = useState({})
+
+
+  async function getData(url) {
+    const res = await fetch(url)
+    const data = await res.json()
+    // setGames(games => games.concat(data.results))
+    setGames(data.results)
+  }
+
+  useEffect(() => {
+    getData(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_RAWG_KEY}&page_size=20`)
+  }, [])
+
+  // console.log("API KEY: " + import.meta.env.VITE_RAWG_KEY)
+
   return (
     <>
       <nav className="flex items-center justify-between h-16 bg-gray-900 shadow-lg lg:px-9 md:px-6 px-3">
@@ -33,9 +50,16 @@ export default function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={
+            <HomePage
+              games={games}
+              getData={getData}
+              setGames={setGames}
+              updateDetails={setDetailsData}
+            />}
+          />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/details" element={<DetailsPage />} />
+          <Route path="/details/:id" element={<DetailsPage game={detailsData} />} />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
       </main>
