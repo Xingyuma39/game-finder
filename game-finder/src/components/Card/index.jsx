@@ -41,7 +41,7 @@ export default function Card({ game, updateDetails }) {
 
         // </figure>
 
-        <figure className="relative mb-4 break-inside-avoid-column border-2 border-black bg-[#b6c2d4] shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out text-green-200">
+        <figure className="relative mb-4 break-inside-avoid-column border-4 border-gray-900 bg-[#b6c2d4] shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out text-green-200">
             <Link to={"/details/" + game?.id} onClick={() => updateDetails(game)}>
                 <div className="card-overlay absolute cursor-pointer w-full flex items-center justify-center bg-black z-10">
                     <img src={eyeIcon} className="w-10"></img>
