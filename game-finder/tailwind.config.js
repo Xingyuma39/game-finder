@@ -5,7 +5,11 @@ export default {
     "./frontend/src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      // cursor: {
+      //   'fancy': 'url(hand.cur), pointer',
+      // }
+    },
   },
   plugins: [],
 }

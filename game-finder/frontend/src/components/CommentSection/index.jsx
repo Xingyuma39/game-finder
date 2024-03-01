@@ -73,8 +73,8 @@ export default function commentSection({ gameId }) {
     }
 
     return (
-        <div className='comment-section bg-gray-300 rounded-t-lg p-4 pb-10 mt-4 mx-10 space-y-4 relative'>
-            <h1 className='text-xl font-bold'>Viewer Insights</h1>
+        <div className='comment-section bg-gray-300 rounded-t-lg rounded-b-lg p-4 pb-10 mt-4 mx-10 space-y-4 relative'>
+            <h1 className='text-xl font-bold'>Player Reviews</h1>
             <button
                 onClick={toggleCreateForm}
                 className="top-0 right-5 absolute text-white hover:bg-green-800 font-bold py-2 px-4 bg-green-900 rounded cursor-pointer mr-2"
