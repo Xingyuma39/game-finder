@@ -7,7 +7,8 @@ const commentSchema = new mongoose.Schema(
         name: { type: String, required: true },
         content: { type: String, required: true },
         title: { type: String, maxLength: 30 },
-        gameId: { type: Number, required: true }
+        gameId: { type: Number, required: true },
+        rating: { type: Number }
     },
     { timestamps: true }
 );

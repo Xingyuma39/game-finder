@@ -5,6 +5,7 @@ export default function Comment({ data, refreshComments }) {
     const [showEditForm, setShowEditForm] = useState(false)
     const [editFormData, setEditFormData] = useState({
         name: data.name,
+        rating: data.rating,
         content: data.content
     })
 
@@ -47,6 +48,14 @@ export default function Comment({ data, refreshComments }) {
                     onChange={handleInputChange}
                 />
                 <br />
+                <input
+                    name="rating"
+                    className="px-2 py-1 w-full bg-gray-100"
+                    placeholder="Give a rating!"
+                    value={editFormData.rating}
+                    onChange={handleInputChange}
+                    />
+                    <br />
                 <textarea
                     name="content"
                     className="p-2 my-2 h-[100px] w-full bg-gray-100"
