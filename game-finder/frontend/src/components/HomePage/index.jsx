@@ -33,9 +33,9 @@ export default function HomePage({ games, setGames, getData, updateDetails }) {
 
             <div className="pb-10">
                 <form onSubmit={handleSubmit} className="mt-4 text-center">
-                    <input className="box-border p-2 w-1/2 rounded-md border-2 focus:outline-none focus:border-orange-500 border-gray-500" name="search" placeholder="Search for a game..." value={query} onChange={event => setQuery(event.target.value)} />
+                    <input className="box-border p-2 w-1/2 rounded-md border focus:outline-none focus:border-orange-500 border-gray-500" name="search" placeholder="Search for a game..." value={query} onChange={event => setQuery(event.target.value)} />
                         
-                    <button type="submit" className="text-green-100 box-border mx-1 px-3 py-[6px] text-lg border-2 border-gray-600 rounded-lg font-semibold bg-gray-900 hover:bg-green-700 hover:opacity-80 transition-all duration-200 ease-in-out"> Search </button>
+                    <button type="submit" className="text-green-100 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-gray-900 hover:bg-green-700 hover:opacity-80 transition-all duration-200 ease-in-out"> Search </button>
                 </form>
             </div>
 

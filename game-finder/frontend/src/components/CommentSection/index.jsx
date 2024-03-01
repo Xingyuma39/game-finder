@@ -57,7 +57,7 @@ export default function commentSection({ gameId }) {
 
 
     // conditionally render comments
-    let commentElements = [<p key='0' className='text-center'>No reviews yet. Be the first to review!</p>]
+    let commentElements = [<p key='0' className='text-center'>No reviews yet. Add a review!</p>]
     if (comments.length > 0) {
         commentElements = comments.map(comment => {
             return <Comment
@@ -69,46 +69,47 @@ export default function commentSection({ gameId }) {
     }
 
     // conditionally display the text of the create form button
-    let btnText = 'Create'
+    let btnText = 'Add Review'
     if (showCreateForm) {
-        btnText = 'Close'
+        btnText = 'Cancel'
     }
 
     return (
         <>
-            <div className="min-h-screen flex p-5 items-start justify-center px-4">
+            <div className="min-h-screen flex items-start justify-center px-4">
                 <div className="max-w-4xl bg-slate-700 w-full rounded-lg shadow-xl border border-gray-500">
                     <div className="p-4 border-b border-gray-500 hover:bg-gray-700 flex">
                         <h2 className="text-green-400 font-bold text-2xl ">
                             Player Reviews
                         </h2>
     
-                        <button onClick={toggleCreateForm} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg border-2 border-gray-600 rounded-lg font-semibold bg-gray-900 overflow-hidden border-gray-600 w-36">{btnText}<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+                        <button onClick={toggleCreateForm} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg border-2 border-gray-400 rounded-lg font-semibold bg-gray-900 overflow-hidden border-gray-600 w-36 ml-auto">{btnText}<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
                     </div>
-                    <div className="p-4 border-b border-gray-500 hover:bg-gray-700">
+                    <div className="p-4 border-b border-gray-500">
                         {
                             showCreateForm && <form
                                 onSubmit={handleSubmit}
-                                className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 w-[80vw] mx-auto text-right">
+                                className="bg-gray-500 rounded-lg p-4 my-4 border-gray-400 border-2 w-[80vw] mx-auto text-right">
                                 <input
                                     name="name"
-                                    className="px-2 py-1 w-full bg-gray-100"
+                                    className="px-2 py-1 w-full bg-gray-300"
                                     placeholder="Your name"
                                     value={createFormData.name}
                                     onChange={handleInputChange}
                                 />
-                                <br />
+                                <br/>
+                                <br/>
                                 <input
                                     name="rating"
-                                    className="px-2 py-1 w-full bg-gray-100"
+                                    className="px-2 py-1 w-full bg-gray-300"
                                     placeholder="Give a rating!"
                                     value={createFormData.rating}
                                     onChange={handleInputChange}
                                 />
-                                <br />
+                                <br/>
                                 <textarea
                                     name="content"
-                                    className="p-2 my-2 h-[100px] w-full bg-gray-100"
+                                    className="p-2 my-2 h-[100px] w-full bg-gray-300"
                                     placeholder="Share your thoughts!"
                                     value={createFormData.content}
                                     onChange={handleInputChange}
