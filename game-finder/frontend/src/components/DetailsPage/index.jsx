@@ -27,8 +27,6 @@ export default function DetailsPage(props) {
         }
     }, [])
 
-    // let currencies = ''
-    // let languages = ''
     let platforms = ''
     let pf = <div></div>
     let p = <p className="text-green-100"></p>
@@ -62,17 +60,6 @@ export default function DetailsPage(props) {
         // console.log(tg)
 
         // p = <p className="text-green-100">{platforms}</p>
-    
-        // for (let currency in country.currencies) {
-        //     // currencies += `${country.currencies[currency]} `
-        //     currencies += `${currency}  `
-        // }
-
-        // for (let continent of country.continents) {
-        //     continents += `${continent}  `
-        // }
-
-        // let population = country.population.toLocaleString("en-US")
 
         return (
             <main>
