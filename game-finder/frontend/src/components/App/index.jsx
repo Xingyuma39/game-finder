@@ -6,12 +6,13 @@ import NotFoundPage from '../NotFoundPage'
 import Gallery from "../Gallery"
 import './styles.css'
 import { useState, useEffect } from 'react'
+// import { loadEnv } from 'vite'
 
 
 export default function App() {
   const [games, setGames] = useState([])
   const [detailsData, setDetailsData] = useState({})
-
+  // process.env = {...process.env, ...loadEnv(mode, process.cwd())};
 
   async function getData(url) {
     const res = await fetch(url)

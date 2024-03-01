@@ -1,19 +1,27 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
+import CommentSection from '../CommentSection'
+
 
 export default function DetailsPage(props) {
     const [game, setGame] = useState({ ...props.game })
     const params = useParams()
 
+    // console.log(game)
+    // console.log(game.id)
+
+
     useEffect(() => {
         // Query the API if a Card component was not clicked on
-        if (!game?.id) {
-            // console.log(country)
+        if (!game.id) {
+            // console.log("hello")
             async function getGameFromAPI() {
-                const res = await fetch(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_RAWG_KEY}` + `&search=${params.name}`)
-                const { data } = await res.json()
-                setGame(data)
+                const res = await fetch(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_RAWG_KEY}` + `&search=${params.id}`)
+                const { results } = await res.json()
+                // console.log(results)
+                // console.log(params.id)
+                setGame(results[0])
             }
             getGameFromAPI()
         }
@@ -25,8 +33,9 @@ export default function DetailsPage(props) {
     let pf = <div></div>
     let p = <p className="text-green-100"></p>
     let pa = []
+    let tg = []
 
-    if(game?.id) {
+    if(game.id) {
 
         for (let plat in game?.platforms) {
             // platforms += `${game?.platforms[platform].name}  `
@@ -36,13 +45,21 @@ export default function DetailsPage(props) {
             // console.log(game.platforms[plat].platform.name)
             pf += <div>{game?.platforms[plat].platform.name}</div>
 
-            console.log(platforms)
+            // console.log(platforms)
 
             p = <p className="text-green-100">{platforms}</p>
             // p += '{"\n"}'
             pa.push(<p className="text-green-100">{game?.platforms[plat].platform.name}</p>)
 
         }
+
+        for (let tag in game?.tags) {
+            // console.log(game?.tags[tag])
+            if(game?.tags[tag].language === "eng") {
+                tg.push(<p className="text-green-100">{game?.tags[tag].name}</p>)
+            }
+        }
+        // console.log(tg)
 
         // p = <p className="text-green-100">{platforms}</p>
     
@@ -94,6 +111,15 @@ export default function DetailsPage(props) {
 
                             <div className="md:grid md:grid-cols-2 hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b border-gray-500">
                                 <p className="text-green-500 font-bold">
+                                    ESRB Rating:
+                                </p>
+                                <p className="text-green-100">
+                                    {game?.esrb_rating.name}
+                                </p>
+                            </div>
+
+                            <div className="md:grid md:grid-cols-2 hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b border-gray-500">
+                                <p className="text-green-500 font-bold">
                                     Platform(s):
                                 </p>
                                 {/* <p className="text-green-100"> */}
@@ -103,6 +129,13 @@ export default function DetailsPage(props) {
                                 {/* </p> */}
                                 {/* {p} */}
                                 {pa}
+                            </div>
+
+                            <div className="md:grid md:grid-cols-2 hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b border-gray-500">
+                                <p className="text-green-500 font-bold">
+                                    Tag(s):
+                                </p>
+                                {tg}
                             </div>
         
                             {/* if(country.user) { */}
@@ -119,13 +152,18 @@ export default function DetailsPage(props) {
                         </div>
                     </div>
                 </div>
+
+                <CommentSection gameId={game?.id} />
+
+                <br/>
+
             </main>
         )
-
-    } else {
-        return (
-            <p>Your Country data is loading...</p>
-        )
     }
+    // } else {
+    //     return (
+    //         <p>Your Country data is loading...</p>
+    //     )
+    // }
 
 }
