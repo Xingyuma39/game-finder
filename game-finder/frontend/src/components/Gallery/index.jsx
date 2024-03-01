@@ -95,8 +95,6 @@ export default function Gallery({ query, games, getData, updateDetails }) {
         }
         setCurrentPage(currentPage + 6)
     }
-
-    console.log(params)
     
     let galleryContent = <p></p>
 
