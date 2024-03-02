@@ -39,7 +39,7 @@ export default function Comment({ data, refreshComments }) {
         return (
             <form
                 onSubmit={handleSubmit}
-                className="bg-gray-500 rounded-lg p-4 my-4 border-gray-400 border-2 w-[80vw] mx-auto text-right">
+                className="bg-gray-700 rounded-lg p-4 my-4 border-gray-400 border-2 w-[80vw] mx-auto text-right">
                 <input
                     name="name"
                     className="px-2 py-1 w-full bg-gray-300"
@@ -67,7 +67,7 @@ export default function Comment({ data, refreshComments }) {
                 <div>
                     <button
                         onClick={() => { setShowEditForm(false) }}
-                        className="text-white hover:bg-gray-800 font-bold py-2 px-4 bg-gray-700 rounded cursor-pointer mr-2">
+                        className="text-white hover:bg-slate-900 font-bold py-2 px-4 bg-slate-800 rounded cursor-pointer mr-2">
                         Cancel
                     </button>
                     <button

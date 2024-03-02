@@ -89,7 +89,7 @@ export default function commentSection({ gameId }) {
                         {
                             showCreateForm && <form
                                 onSubmit={handleSubmit}
-                                className="bg-gray-500 rounded-lg p-4 my-4 border-gray-400 border-2 w-[80vw] mx-auto text-right">
+                                className="bg-gray-700 rounded-lg p-4 my-4 border-gray-400 border-2 w-[80vw] mx-auto text-right">
                                 <input
                                     name="name"
                                     className="px-2 py-1 w-full bg-gray-300"
@@ -116,7 +116,7 @@ export default function commentSection({ gameId }) {
                                 />
                                 <button
                                     type="submit"
-                                    className="text-white hover:bg-gray-800 font-bold py-2 px-4 bg-gray-700 rounded cursor-pointer mr-2">
+                                    className="text-white hover:bg-green-800 font-bold py-2 px-4 bg-green-900 rounded cursor-pointer mr-2">
                                     Post
                                 </button>
                             </form>
