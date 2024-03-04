@@ -70,7 +70,7 @@ export default function DetailsPage(props) {
                         <div className="p-4 border-b border-gray-500 hover:bg-gray-700 flex">
                             <Link to="/">
                                 <div className="page-controls flex w-full items-center justify-start bg-gray-700">
-                                    <button className="group relative text-green-100 box-border mx-0 px-3 py-[6px] text-lg border-2 border-gray-600 rounded-lg font-semibold bg-gray-900 overflow-hidden border-gray-600 w-20">Back<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+                                    <button className="group relative text-green-100 box-border mx-0 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-20">Back<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
                                 </div>
                             </Link>
                             <h2 className="text-green-400 font-bold text-2xl ml-3 p-1">

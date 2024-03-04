@@ -69,9 +69,11 @@ export default function commentSection({ gameId }) {
     }
 
     // conditionally display the text of the create form button
-    let btnText = 'Add Review'
+    let btnText =
+    <button onClick={toggleCreateForm} className="group relative text-green-400 box-border mx-1 px-3 py-[6px] text-lg  rounded-lg font-semibold bg-gray-900 overflow-hidden w-40 ml-auto">+ Write Review<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
     if (showCreateForm) {
-        btnText = 'Cancel'
+        btnText =
+        <button onClick={toggleCreateForm} className="group relative text-red-400 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-40 ml-auto">Cancel<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
     }
 
     return (
@@ -83,7 +85,8 @@ export default function commentSection({ gameId }) {
                             Player Reviews
                         </h2>
     
-                        <button onClick={toggleCreateForm} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg border-2 border-gray-400 rounded-lg font-semibold bg-gray-900 overflow-hidden border-gray-600 w-36 ml-auto">{btnText}<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+                        {btnText}
+
                     </div>
                     <div className="p-4 border-b border-gray-500">
                         {
@@ -114,11 +117,10 @@ export default function commentSection({ gameId }) {
                                     value={createFormData.content}
                                     onChange={handleInputChange}
                                 />
-                                <button
-                                    type="submit"
-                                    className="text-white hover:bg-green-800 font-bold py-2 px-4 bg-green-900 rounded cursor-pointer mr-2">
-                                    Post
-                                </button>
+
+                                <button onClick={toggleCreateForm} className="group relative text-red-400 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-20 ml-auto mr-2">Cancel<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+
+                                <button type="submit" className="group relative text-green-400 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-20 ml-auto">Post<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
                             </form>
                         }
 
