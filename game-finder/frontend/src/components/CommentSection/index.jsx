@@ -57,7 +57,7 @@ export default function commentSection({ gameId }) {
 
 
     // conditionally render comments
-    let commentElements = [<p key='0' className='text-center text-green-100'>No reviews yet. Add a review!</p>]
+    let commentElements = [<p key='0' className='text-center text-green-100'>No reviews yet. Write a review!</p>]
     if (comments.length > 0) {
         commentElements = comments.map(comment => {
             return <Comment
@@ -70,10 +70,12 @@ export default function commentSection({ gameId }) {
 
     // conditionally display the text of the create form button
     let btnText =
-    <button onClick={toggleCreateForm} className="group relative text-green-400 box-border mx-1 px-3 py-[6px] text-lg  rounded-lg font-semibold bg-gray-900 overflow-hidden w-40 ml-auto">+ Write Review<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+    // <button onClick={toggleCreateForm} className="group relative text-green-400 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-40 ml-auto">+ Write Review<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+    <button onClick={toggleCreateForm} className="text-green-400 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out ml-auto w-40"> + Write Review </button>
     if (showCreateForm) {
         btnText =
-        <button onClick={toggleCreateForm} className="group relative text-red-400 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-40 ml-auto">Cancel<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+        // <button onClick={toggleCreateForm} className="group relative text-red-400 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-40 ml-auto">Cancel<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+        <button onClick={toggleCreateForm} className="text-red-400 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out ml-auto w-40"> Cancel </button>
     }
 
     return (
@@ -118,9 +120,9 @@ export default function commentSection({ gameId }) {
                                     onChange={handleInputChange}
                                 />
 
-                                <button onClick={toggleCreateForm} className="group relative text-red-400 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-20 ml-auto mr-2">Cancel<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+                                <button onClick={toggleCreateForm} className="text-red-400 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out ml-auto mr-2"> Cancel </button>
 
-                                <button type="submit" className="group relative text-green-400 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-20 ml-auto">Post<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+                                <button type="submit" className="text-green-400 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out ml-auto mr-2 w-20"> Post </button>
                             </form>
                         }
 

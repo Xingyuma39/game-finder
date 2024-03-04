@@ -103,23 +103,27 @@ export default function Gallery({ query, games, getData, updateDetails }) {
     let buttons =
         <div className="page-controls flex w-full items-center justify-center bg-gray-700">
 
-            <button onClick={getPrevPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Previous Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+            {/* <button onClick={getPrevPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Previous Page </button> */}
 
-            <button onClick={getPrevPage3} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-2 mr-1">{currentPage-3}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
+            <button onClick={getPrevPage} className="text-green-100 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out"> Previous Page </button>
 
-            <button onClick={getPrevPage2} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-1">{currentPage-2}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
+            <button onClick={getPrevPage3} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-2 mr-1">{currentPage-3}</button>
 
-            <button onClick={getPrevPage} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-1">{currentPage-1}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
+            <button onClick={getPrevPage2} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-1">{currentPage-2}</button>
+
+            <button onClick={getPrevPage} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-1">{currentPage-1}</button>
 
             <button className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-1 cursor-auto underline">{currentPage}</button>
 
-            <button onClick={getNextPage} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-1">{currentPage+1}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
+            <button onClick={getNextPage} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-1">{currentPage+1}</button>
 
-            <button onClick={getNextPage2} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-1">{currentPage+2}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
+            <button onClick={getNextPage2} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-1">{currentPage+2}</button>
 
-            <button onClick={getNextPage3} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-2">{currentPage+3}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
+            <button onClick={getNextPage3} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-2">{currentPage+3}</button>
 
-            <button onClick={getNextPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Next Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+            {/* <button onClick={getNextPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Next Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button> */}
+
+            <button onClick={getNextPage} className="text-green-100 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out"> Next Page </button>
 
         </div>
 
@@ -127,7 +131,9 @@ export default function Gallery({ query, games, getData, updateDetails }) {
         buttons =
         <div className="page-controls flex w-full items-center justify-center bg-gray-700">
 
-            <button className="group relative text-gray-800 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-700 overflow-hidden border-gray-600 w-36 cursor-auto"> Previous Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300"></div></button>
+            {/* <button className="group relative text-gray-800 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-700 overflow-hidden w-36 cursor-auto"> Previous Page </button> */}
+
+            <button className="text-gray-800 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-700 border border-gray-700 hover:bg-gray-700 hover:opacity-100 hover:border-gray-700 transition-all duration-200 ease-in-out cursor-auto"> Previous Page </button>
 
             <button className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-2 mr-1 cursor-auto underline">{currentPage}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
 
@@ -143,14 +149,18 @@ export default function Gallery({ query, games, getData, updateDetails }) {
 
             <button onClick={getNextPage6} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 mr-1 ml-1 mr-2">{currentPage+6}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
 
-            <button onClick={getNextPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Next Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+            {/* <button onClick={getNextPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Next Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button> */}
+
+            <button onClick={getNextPage} className="text-green-100 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out"> Next Page </button>
         </div>
     } else if (currentPage === 2) {
         buttons =
         <div className="page-controls flex w-full items-center justify-center bg-gray-700">
 
-            <button onClick={getPrevPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Previous Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
-            
+            {/* <button onClick={getPrevPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Previous Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button> */}
+
+            <button onClick={getPrevPage} className="text-green-100 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out"> Previous Page </button>
+
             <button onClick={getPrevPage} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-2 mr-1">{currentPage-1}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
 
             <button className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-1 cursor-auto underline">{currentPage}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
@@ -165,13 +175,17 @@ export default function Gallery({ query, games, getData, updateDetails }) {
 
             <button onClick={getNextPage5} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-2">{currentPage+5}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
 
-            <button onClick={getNextPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Next Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+            {/* <button onClick={getNextPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Next Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button> */}
+
+            <button onClick={getNextPage} className="text-green-100 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out"> Next Page </button>
         </div>
     } else if (currentPage === 3) {
         buttons =
         <div className="page-controls flex w-full items-center justify-center bg-gray-700">
 
-            <button onClick={getPrevPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Previous Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+            {/* <button onClick={getPrevPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Previous Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button> */}
+
+            <button onClick={getPrevPage} className="text-green-100 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out"> Previous Page </button>
             
             <button onClick={getPrevPage2} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-2 mr-1">{currentPage-2}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
 
@@ -187,7 +201,9 @@ export default function Gallery({ query, games, getData, updateDetails }) {
 
             <button onClick={getNextPage4} className="align-middle items-center justify-center group relative h-12 w-8 overflow-hidden rounded-2xl bg-gray-700 text-lg font-bold text-green-400 mt-1 mb-1 ml-1 mr-2">{currentPage+4}<div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div></button>
 
-            <button onClick={getNextPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Next Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
+            {/* <button onClick={getNextPage} className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg rounded-lg font-semibold bg-gray-900 overflow-hidden w-36"> Next Page <div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button> */}
+
+            <button onClick={getNextPage} className="text-green-100 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out"> Next Page </button>
         </div>
     }
 
