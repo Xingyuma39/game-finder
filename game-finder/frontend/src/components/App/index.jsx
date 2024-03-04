@@ -6,13 +6,13 @@ import NotFoundPage from '../NotFoundPage'
 import Gallery from "../Gallery"
 import './styles.css'
 import { useState, useEffect } from 'react'
+import AuthFormPage from '../AuthFormPage'
 // import { loadEnv } from 'vite'
-
 
 export default function App() {
   const [games, setGames] = useState([])
   const [detailsData, setDetailsData] = useState({})
-  // process.env = {...process.env, ...loadEnv(mode, process.cwd())};
+  const [loginStatus, setLoginStatus] = useState(false)
 
   async function getData(url) {
     const res = await fetch(url)
@@ -23,9 +23,34 @@ export default function App() {
 
   useEffect(() => {
     getData(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_RAWG_KEY}&page_size=20`)
+    if (localStorage.getItem('userToken')) {
+      setLoginStatus(true)
+    }
   }, [])
 
   // console.log("API KEY: " + import.meta.env.VITE_RAWG_KEY)
+
+  //conditionally render signup/login/logout buttons
+  let authLink =
+  <div className="flex lg:gap-5 md:gap-4 sm:gap-3 gap-2 ml-2">
+    <Link to="/auth/signup">
+      <h2 className="text-green-200 md:text-lg sm:text-md">Sign Up</h2>
+    </Link>
+    <Link to="/auth/login">
+      <h2 className="text-green-200 md:text-lg sm:text-md">Log In</h2>
+    </Link>
+  </div>
+
+  if (localStorage.getItem('userToken')) {
+    authLink = <button
+      className="text-green-200 md:text-lg sm:text-md ml-2 mr-2"
+      onClick={() => {
+        localStorage.clear()
+        setLoginStatus(false)
+      }}>
+      Log Out
+    </button>
+  }
 
   return (
     <>
@@ -41,11 +66,14 @@ export default function App() {
             <h2 className="text-green-500 md:text-lg sm:text-md ml-2 mr-2">Home</h2>
           </Link>
           <Link to="/about">
-            <h2 className="text-green-200 md:text-lg sm:text-md ml-2 mr-2">About</h2>
+            <h2 className="text-green-200 md:text-lg sm:text-md ml-2 mr-2">About Us</h2>
           </Link>
           <Link to="/details">
             <h2 className="text-green-200 md:text-lg sm:text-md ml-2 mr-2">Details</h2>
           </Link>
+
+          {authLink}
+          
         </div>
       </nav>
 
@@ -61,6 +89,7 @@ export default function App() {
           />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/details/:id" element={<DetailsPage game={detailsData} />} />
+          <Route path="/auth/:formType" element={<AuthFormPage setLoginStatus={setLoginStatus} />} />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
       </main>

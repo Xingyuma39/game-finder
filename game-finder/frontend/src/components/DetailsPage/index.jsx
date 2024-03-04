@@ -64,12 +64,6 @@ export default function DetailsPage(props) {
         return (
             <main>
 
-                {/* <Link to="/">
-                    <div className="pl-4 pt-3 pr-1 pb-1 page-controls flex w-full items-center justify-start bg-gray-800">
-                        <button className="group relative text-green-100 box-border mx-1 px-3 py-[6px] text-lg border-2 border-gray-600 rounded-lg font-semibold bg-gray-900 overflow-hidden border-gray-600 w-36">Back<div className="absolute inset-0 h-full w-full scale-0 transition-all duration-300 group-hover:scale-100 group-hover:bg-gray-200/40"></div></button>
-                    </div>
-                </Link> */}
-
                 <div className="min-h-screen flex p-4 items-start justify-center px-4">
 
                     <div className="max-w-4xl bg-slate-700 w-full rounded-lg shadow-xl border border-gray-500">

@@ -8,7 +8,12 @@ const commentSchema = new mongoose.Schema(
         content: { type: String, required: true },
         title: { type: String, maxLength: 30 },
         gameId: { type: Number, required: true },
-        rating: { type: Number, required: true }
+        rating: { type: Number, required: true },
+        userId: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: 'User',
+        },
     },
     { timestamps: true }
 );

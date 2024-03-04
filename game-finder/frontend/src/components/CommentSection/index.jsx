@@ -57,7 +57,7 @@ export default function commentSection({ gameId }) {
 
 
     // conditionally render comments
-    let commentElements = [<p key='0' className='text-center'>No reviews yet. Add a review!</p>]
+    let commentElements = [<p key='0' className='text-center text-green-100'>No reviews yet. Add a review!</p>]
     if (comments.length > 0) {
         commentElements = comments.map(comment => {
             return <Comment
