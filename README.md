@@ -33,8 +33,7 @@ Game finder is a must-have app for game enthusiasts to find and leave reviews fo
 
 
 ## :robot: List of the technologies used
-Mongoose
-![mongoose](https://img.shields.io/badge/mongoose-green)
+![mongoose](https://img.shields.io/badge/mongoose-green?style=for-the-badge)
 ![express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
 ![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![nodejs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
