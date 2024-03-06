@@ -17,9 +17,10 @@ Game finder is a must-have app for game enthusiasts to find and leave reviews fo
 
 <details>
   <summary>Wireframes</summary>
-
+  <p align="center"><img src="https://media.git.generalassemb.ly/user/51683/files/a1834c06-4e1e-4fcf-bdb7-fd0635cc8e07" width="800"></p>
+  <p align="center"><img src="https://media.git.generalassemb.ly/user/51683/files/20b317ed-f7ed-4a65-b3fa-cb4f8f2587aa" width="800"></p>
+  <p align="center"><img src="https://media.git.generalassemb.ly/user/51683/files/56179952-5cf5-4ec6-9c98-93cb2e80f570" width="800"></p>
 </details>
-
 
 ## :art: Screenshots
 
@@ -53,6 +54,26 @@ Mongoose
 ## :heart_eyes_cat: Installation Instructions
 
 No installation required, create an account to start leaving reviews!
+
+
+## Route Table
+Route table that will define and describe what each route in our application is doing. 
+
+|       **URL**     | **REST Route**    | **HTTP Verb** | **CRUD Action** |   **React Routes**  |  **Models**  |
+| ----------------- | ----------------- | ------------- | --------------- | ------------------- | ------------ |
+| /                 |                   |               |                 | HomePage            |              |
+| /about            |                   |               |                 | AboutPage           |              |
+| /details/:id      |                   |               |                 | DetailsPage         |              |
+| /auth/:formType   |                   |               |                 | AuthFormPage        |              |
+| /*                |                   |               |                 | NotFoundPage        |              |
+| /comments/        | create            | POST          | create          |                     | comment.js   |
+| /comments/:gameId | find              | GET           | read            |                     | comment.js   |
+| /comments/:id     | findByIdAndUpdate | PUT           | update          |                     | comment.js   |
+| /comments/:id     | findByIdAndDelete | DELETE        | delete          |                     | comment.js   |
+| /users/signup     | create            | POST          | create          |                     | user.js      |
+| /users/login      | findOne           | POST          | read            |                     | user.js      |
+
+
 
         
 ## :triangular_flag_on_post: Hurdles
