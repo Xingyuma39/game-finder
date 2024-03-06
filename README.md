@@ -32,6 +32,10 @@ Game finer is a must-have app for game enthusiasts to find and leave reviews for
 
 
 ## :robot: List of the technologies used
+Mongoose
+![express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![nodejs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 ![html5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![css3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
