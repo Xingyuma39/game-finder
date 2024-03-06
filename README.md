@@ -4,7 +4,7 @@
 
 ## :rocket: Description
 
-Game finer is a must-have app for game enthusiasts to find and leave reviews for their favourite games.
+Game finder is a must-have app for game enthusiasts to find and leave reviews for their favourite games.
 
 ## :link: Links
 
