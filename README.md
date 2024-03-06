@@ -1,4 +1,4 @@
-#Game Finder
+# Game Finder
 
 ##### Created by Xing Yu (Jason) Ma
 
