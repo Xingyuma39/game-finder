@@ -4,7 +4,7 @@
 
 ## :rocket: Description
 
-Game finer is a one-stop app for game enthusiasts to find and leave reviews for their games.
+Game finer is a must-have app for game enthusiasts to find and leave reviews for their favourite games.
 
 ## :link: Links
 
@@ -59,4 +59,5 @@ No installation required, create an account to start leaving reviews!
 - [ ] Search filter for games, including genres/newest/ratings
 - [ ] Themes/Dark Mode
 - [ ] User wishlists
-- [ ] Embedded Google Maps
+- [ ] Game Recommendations based on wishlisted games
+- [ ] Embedded Google Maps to show where to find stores that sell games
