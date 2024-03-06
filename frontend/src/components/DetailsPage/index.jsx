@@ -8,19 +8,12 @@ export default function DetailsPage(props) {
     const [game, setGame] = useState({ ...props.game })
     const params = useParams()
 
-    // console.log(game)
-    // console.log(game.id)
-
-
     useEffect(() => {
         // Query the API if a Card component was not clicked on
         if (!game.id) {
-            // console.log("hello")
             async function getGameFromAPI() {
                 const res = await fetch(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_RAWG_KEY}` + `&search=${params.id}`)
                 const { results } = await res.json()
-                // console.log(results)
-                // console.log(params.id)
                 setGame(results[0])
             }
             getGameFromAPI()
@@ -36,30 +29,17 @@ export default function DetailsPage(props) {
     if(game.id) {
 
         for (let plat in game?.platforms) {
-            // platforms += `${game?.platforms[platform].name}  `
-            // platforms += `${plat.platform.name}`
-            // console.log(plat)
             platforms += `${game?.platforms[plat].platform.name} / \n`
-            // console.log(game.platforms[plat].platform.name)
             pf += <div>{game?.platforms[plat].platform.name}</div>
-
-            // console.log(platforms)
-
             p = <p className="text-green-100">{platforms}</p>
-            // p += '{"\n"}'
             pa.push(<p className="text-green-100">{game?.platforms[plat].platform.name}</p>)
-
         }
 
         for (let tag in game?.tags) {
-            // console.log(game?.tags[tag])
             if(game?.tags[tag].language === "eng") {
                 tg.push(<p className="text-green-100">{game?.tags[tag].name}</p>)
             }
         }
-        // console.log(tg)
-
-        // p = <p className="text-green-100">{platforms}</p>
 
         return (
             <main>
@@ -81,7 +61,6 @@ export default function DetailsPage(props) {
                         </div>
                         <div className="p-4 border-b border-gray-500 hover:bg-gray-700 flex">
                             <img src={game?.background_image} className="card-image max-w-sm object-cover cursor-pointer border border-gray-500"/>
-                            {/* min-h-[200px] min-w-full */}
                             <br/>
                         </div>
                         <div>
@@ -108,12 +87,7 @@ export default function DetailsPage(props) {
                                 <p className="text-green-500 font-bold">
                                     Platform(s):
                                 </p>
-                                {/* <p className="text-green-100"> */}
-                                    {/* {platforms} */}
-                                    {/* {game?.platforms[0].platform.name} */}
-                                    {/* {pf} */}
-                                {/* </p> */}
-                                {/* {p} */}
+
                                 {pa}
                             </div>
 
@@ -124,7 +98,6 @@ export default function DetailsPage(props) {
                                 {tg}
                             </div>
         
-                            {/* if(country.user) { */}
                             <div className="md:grid md:grid-cols-2 hover:bg-gray-700 md:space-y-0 space-y-1 p-4">
                                 <p className="text-green-500 font-bold">
                                     Release Date:
@@ -133,8 +106,6 @@ export default function DetailsPage(props) {
                                     {game?.released}
                                 </p>
                             </div>
-                            
-                            {/* } */}
                         </div>
                     </div>
                 </div>
@@ -144,10 +115,4 @@ export default function DetailsPage(props) {
             </main>
         )
     }
-    // } else {
-    //     return (
-    //         <p>Your Country data is loading...</p>
-    //     )
-    // }
-
 }

@@ -17,7 +17,6 @@ export default function App() {
   async function getData(url) {
     const res = await fetch(url)
     const data = await res.json()
-    // setGames(games => games.concat(data.results))
     setGames(data.results)
   }
 
@@ -27,8 +26,6 @@ export default function App() {
       setLoginStatus(true)
     }
   }, [])
-
-  // console.log("API KEY: " + import.meta.env.VITE_RAWG_KEY)
 
   //conditionally render signup/login/logout buttons
   let authLink =

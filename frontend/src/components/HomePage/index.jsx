@@ -1,7 +1,3 @@
-// export default function HomePage() {
-//     return <h1 className="text-green-200">Home Page</h1>
-// }
-
 import { useState } from "react"
 import Gallery from '../Gallery'
 
@@ -14,15 +10,11 @@ export default function HomePage({ games, setGames, getData, updateDetails }) {
         
         setGames([])
         // query the API with the user's input
-        // refreshQueue(`https://api.rawg.io/api/games?key=${import.meta.env.RAWG_KEY}&search=${query}&page_size=20`)
-
         if (query) {
             getData(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_RAWG_KEY}&search=${query}&page_size=20`)
         } else {
             getData(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_RAWG_KEY}&page_size=20`)
         }
-
-        // console.log(import.meta.env.API_KEY)
     }
 
     return (

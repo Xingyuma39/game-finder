@@ -38,27 +38,10 @@ export default function Comment({ data, refreshComments }) {
 
     let editDeleteButtons = 
     <div className="flex justify-end">
-        {/* <button
-        onClick={() => { setShowEditForm(true) }}
-        className="text-white hover:bg-slate-900 font-bold py-2 px-4 bg-slate-800 rounded cursor-pointer mr-2">
-            Edit
-        </button>
-        <button
-        onClick={handleDelete}
-        className="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">
-            Delete
-        </button> */}
-
         <button onClick={() => { setShowEditForm(true) }} className="text-green-100 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out ml-auto"> ✎ Edit </button>
 
         <button onClick={handleDelete} className="text-red-400 box-border mx-1 px-3 py-[6px] text-lg border border-gray-600 rounded-lg font-semibold bg-slate-900 hover:bg-slate-700 hover:opacity-80 hover:border-gray-400 transition-all duration-200 ease-in-out"> ⛌ Delete </button>
     </div>
-
-    // if (data.userId === req.user.id) {
-    //     editDeleteButtons = <div>
-
-    //     </div>
-    // }
 
     // Change the comment to a form if the showEditForm state variable is true
     if (showEditForm) {
@@ -98,7 +81,6 @@ export default function Comment({ data, refreshComments }) {
             </form>
         )
 
-        //  Default JSX of each comment
     } else {
         return (
             <div
