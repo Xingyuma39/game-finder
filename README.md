@@ -57,7 +57,6 @@ No installation required, create an account to start leaving reviews!
 
 
 ## Route Table
-Route table that will define and describe what each route in our application is doing. 
 
 |       **URL**     | **REST Route**    | **HTTP Verb** | **CRUD Action** |   **React Routes**  |  **Models**  |
 | ----------------- | ----------------- | ------------- | --------------- | ------------------- | ------------ |
@@ -74,6 +73,7 @@ Route table that will define and describe what each route in our application is 
 | /users/login      | findOne           | POST          | read            |                     | user.js      |
 
 ## ERD
+
 ![image](https://github.com/Xingyuma39/game-finder/assets/152853230/ceaa62f1-929e-49ab-90c5-5f9e29573fbb)
 
         
