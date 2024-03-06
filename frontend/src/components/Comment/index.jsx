@@ -84,7 +84,7 @@ export default function Comment({ data, refreshComments }) {
     } else {
         return (
             <div
-                className="bg-gray-600 rounded-lg p-4 my-4 border-gray-500 border-2 w-[80vw] mx-auto hover:bg-gray-700">
+                className="bg-gray-600 rounded-lg p-4 my-4 border-gray-500 border-2 w-full max-w-4xl mx-auto hover:bg-gray-700">
                 <p className="text-green-400 font-bold">{data.name}</p>
                 <p className="text-green-100 my-2">Rating: {data.rating}⭐</p>
                 <p className="text-green-100 my-2">{data.content}</p>
