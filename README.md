@@ -73,7 +73,8 @@ Route table that will define and describe what each route in our application is 
 | /users/signup     | create            | POST          | create          |                     | user.js      |
 | /users/login      | findOne           | POST          | read            |                     | user.js      |
 
-
+## ERD
+![image](https://github.com/Xingyuma39/game-finder/assets/152853230/ceaa62f1-929e-49ab-90c5-5f9e29573fbb)
 
         
 ## :triangular_flag_on_post: Hurdles
