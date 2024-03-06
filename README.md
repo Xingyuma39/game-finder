@@ -25,7 +25,7 @@ Game finder is a must-have app for game enthusiasts to find and leave reviews fo
 ## :art: Screenshots
 
 <details>
-  <summary>Events</summary>
+  <summary>Screenshots</summary>
   <p align="center"><img src="https://github.com/Xingyuma39/game-finder/assets/152853230/7a967fed-0406-41c1-8587-dcc07593b602" width="800"></p>
   <p align="center"><img src="https://github.com/Xingyuma39/game-finder/assets/152853230/87f7388d-fb5f-48b0-8da2-9982be875566" width="800"></p>
   <p align="center"><img src="https://github.com/Xingyuma39/game-finder/assets/152853230/2c462374-f267-462d-aa51-de265c49d20d" width="800"></p>
