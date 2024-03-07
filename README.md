@@ -17,14 +17,15 @@ Game finder is a must-have app for game enthusiasts to find and leave reviews fo
 
 <details>
   <summary>Wireframes</summary>
-
+  <p align="center"><img src="https://media.git.generalassemb.ly/user/51683/files/a1834c06-4e1e-4fcf-bdb7-fd0635cc8e07" width="800"></p>
+  <p align="center"><img src="https://media.git.generalassemb.ly/user/51683/files/20b317ed-f7ed-4a65-b3fa-cb4f8f2587aa" width="800"></p>
+  <p align="center"><img src="https://media.git.generalassemb.ly/user/51683/files/56179952-5cf5-4ec6-9c98-93cb2e80f570" width="800"></p>
 </details>
-
 
 ## :art: Screenshots
 
 <details>
-  <summary>Events</summary>
+  <summary>Screenshots</summary>
   <p align="center"><img src="https://github.com/Xingyuma39/game-finder/assets/152853230/7a967fed-0406-41c1-8587-dcc07593b602" width="800"></p>
   <p align="center"><img src="https://github.com/Xingyuma39/game-finder/assets/152853230/87f7388d-fb5f-48b0-8da2-9982be875566" width="800"></p>
   <p align="center"><img src="https://github.com/Xingyuma39/game-finder/assets/152853230/2c462374-f267-462d-aa51-de265c49d20d" width="800"></p>
@@ -32,15 +33,17 @@ Game finder is a must-have app for game enthusiasts to find and leave reviews fo
 
 
 ## :robot: List of the technologies used
-Mongoose
+![mongoose](https://img.shields.io/badge/mongoose-green?style=for-the-badge)
 ![express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
 ![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![nodejs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![visualstudiocode](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 ![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 ![html5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![css3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
+![miro](https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white)
 
 
 ## :100: User Stories
@@ -53,6 +56,27 @@ Mongoose
 ## :heart_eyes_cat: Installation Instructions
 
 No installation required, create an account to start leaving reviews!
+
+
+## Route Table
+
+|       **URL**     | **REST Route**    | **HTTP Verb** | **CRUD Action** |   **React Routes**  |  **Models**  |
+| ----------------- | ----------------- | ------------- | --------------- | ------------------- | ------------ |
+| /                 |                   |               |                 | HomePage            |              |
+| /about            |                   |               |                 | AboutPage           |              |
+| /details/:id      |                   |               |                 | DetailsPage         |              |
+| /auth/:formType   |                   |               |                 | AuthFormPage        |              |
+| /*                |                   |               |                 | NotFoundPage        |              |
+| /comments/        | create            | POST          | create          |                     | comment.js   |
+| /comments/:gameId | find              | GET           | read            |                     | comment.js   |
+| /comments/:id     | findByIdAndUpdate | PUT           | update          |                     | comment.js   |
+| /comments/:id     | findByIdAndDelete | DELETE        | delete          |                     | comment.js   |
+| /users/signup     | create            | POST          | create          |                     | user.js      |
+| /users/login      | findOne           | POST          | read            |                     | user.js      |
+
+## ERD
+
+![image](https://github.com/Xingyuma39/game-finder/assets/152853230/ceaa62f1-929e-49ab-90c5-5f9e29573fbb)
 
         
 ## :triangular_flag_on_post: Hurdles
